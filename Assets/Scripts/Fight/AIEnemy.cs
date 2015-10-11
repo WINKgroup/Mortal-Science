@@ -148,7 +148,9 @@ public class AIEnemy : MonoBehaviour
 
 	void JumpInput()
 	{
-		this.playerMovement.inputJump = (Random.value > 0.6f) ? 1 : 0;
+		if(!this.closeCombat)
+			this.playerMovement.inputJump = (Random.value > 0.6f) ? 1 : 0;
+
 		if(this.playerMovement.inputJump == 1)
 			Debug.Log("Jump");
 	}
