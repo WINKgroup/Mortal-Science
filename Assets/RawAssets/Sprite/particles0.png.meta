@@ -1,0 +1,594 @@
+fileFormatVersion: 2
+guid: 42a3205e821b8ce439969ed31a8ad661
+timeCreated: 1441966751
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: particles0_0
+    21300002: particles0_3
+    21300004: particles0_4
+    21300006: particles0_5
+    21300008: particles0_7
+    21300010: particles0_8
+    21300012: particles0_9
+    21300014: particles0_13
+    21300016: particles0_15
+    21300018: particles0_17
+    21300020: particles0_19
+    21300022: particles0_20
+    21300024: particles0_21
+    21300026: particles0_22
+    21300028: particles0_23
+    21300030: particles0_24
+    21300032: particles0_25
+    21300034: particles0_26
+    21300036: particles0_27
+    21300038: particles0_29
+    21300040: particles0_37
+    21300042: particles0_40
+    21300044: particles0_48
+    21300046: particles0_51
+    21300048: particles0_64
+    21300050: particles0_71
+    21300052: particles0_72
+    21300054: particles0_74
+    21300056: particles0_75
+    21300058: particles0_77
+    21300060: particles0_89
+    21300062: particles0_97
+    21300064: particles0_102
+    21300066: particles0_108
+    21300068: particles0_109
+    21300070: particles0_112
+    21300072: particles0_116
+    21300074: particles0_130
+    21300076: particles0_134
+    21300078: particles0_140
+    21300080: particles0_154
+    21300082: particles0_157
+    21300084: particles0_169
+    21300086: particles0_170
+    21300088: particles0_171
+    21300090: particles0_172
+    21300092: particles0_176
+    21300094: particles0_184
+    21300096: particles0_185
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: particles0_0
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 954
+        width: 57
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_3
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 951
+        width: 57
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_4
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 958
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_5
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 958
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_7
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 949
+        width: 80
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_8
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 950
+        width: 61
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_9
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 955
+        width: 53
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_13
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 949
+        width: 62
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_15
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 953
+        width: 55
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_17
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 954
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_19
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 949
+        width: 48
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_20
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 950
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_21
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 950
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_22
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 849
+        width: 69
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_23
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 850
+        width: 134
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_24
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 850
+        width: 123
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_25
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 848
+        width: 109
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_26
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 753
+        width: 132
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_27
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 753
+        width: 132
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_29
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 753
+        width: 105
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_37
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 753
+        width: 55
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_40
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 659
+        width: 144
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_48
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 660
+        width: 144
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_51
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 659
+        width: 160
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_64
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 659
+        width: 86
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_71
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 659
+        width: 160
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_72
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 660
+        width: 156
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_74
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 541
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_75
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 542
+        width: 164
+        height: 39
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_77
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 543
+        width: 161
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_89
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 544
+        width: 155
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_97
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 542
+        width: 84
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_102
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 543
+        width: 152
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_108
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 420
+        width: 145
+        height: 99
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_109
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 419
+        width: 192
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_112
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 421
+        width: 217
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_116
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 418
+        width: 213
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_130
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 270
+        width: 126
+        height: 99
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_134
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 277
+        width: 186
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_140
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 270
+        width: 202
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_154
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 270
+        width: 180
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_157
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 274
+        width: 219
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_169
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 167
+        width: 85
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_170
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 156
+        width: 183
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_171
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 135
+        width: 189
+        height: 97
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_172
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 114
+        width: 161
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_176
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 195
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_184
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 5
+        width: 162
+        height: 113
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: particles0_185
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 5
+        width: 168
+        height: 110
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
