@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
 	private GravityObject feet;
 	private Animator animator;
 	private AIEnemy aiEnemy;
+	private CameraShake camShake;
 
 	void Awake()
 	{
@@ -45,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
 		this.feet 		= this.GetComponentInChildren<GravityObject>();
 		this.animator 	= this.GetComponentInChildren<Animator>();
 		this.aiEnemy 	= this.GetComponent<AIEnemy>();
+		this.camShake 	= Camera.main.GetComponent<CameraShake>();
 
 		this.arena = GameObject.Find("Arena").GetComponent<Arena>();
 
@@ -205,6 +207,8 @@ public class PlayerMovement : MonoBehaviour
 
 		if(this.health > 0)
 		{
+			this.camShake.Shake();
+
 			this.health -= damage;
 			
 			if(this.health > 0)

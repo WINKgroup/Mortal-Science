@@ -26,6 +26,7 @@ public abstract class Damageable : MonoBehaviour
 
 	protected void DestroyAnimation()
 	{
+		Camera.main.GetComponent<CameraShake>().Shake();
 		this.animator.SetTrigger("Destroy");
 	}
 

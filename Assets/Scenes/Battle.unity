@@ -2229,6 +2229,7 @@ GameObject:
   - 124: {fileID: 2096568249}
   - 81: {fileID: 2096568248}
   - 114: {fileID: 2096568253}
+  - 114: {fileID: 2096568254}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2322,3 +2323,17 @@ MonoBehaviour:
   bounds: 0
   minCameraPos: {x: -7.19999981, y: -7.36000013, z: -314.5}
   maxCameraPos: {x: 7.19999981, y: 85.1999969, z: 9.94999981}
+--- !u!114 &2096568254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2096568247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d47e1c5a53fb9468895f8ed19bd8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeIntensity: .0250000004
+  shakeDecay: .00200000009
+  multiplier: .00200000009
