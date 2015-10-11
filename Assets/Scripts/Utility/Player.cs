@@ -2,29 +2,24 @@ using UnityEngine;
 using System.Collections;
 
 [System.Serializable]
-public class Character
+public class Player
 {
 	public int health;
-
-	public string name;
-
-	public int characterID;
-
 	public int numberController;
+	public Character character;
 
-	public Character ()
+
+	public Player ()
 	{
 		this.health = 100;
-		this.name = "Player";
-		this.characterID = 0;
+		this.character = null;
 		this.numberController = 0;
 	}
 
-	public Character (int iHealth, string sName, int iID, int iNumber)
+	public Player (int iHealth, Scientist hScientist, int iNumber)
 	{
 		this.health = iHealth;
-		this.name = sName;
-		this.characterID = iID;
+		this.character = CharacterCollector.Instance.GetCharacter(hScientist);
 		this.numberController = iNumber;
 	}
 
@@ -33,9 +28,9 @@ public class Character
 		this.numberController = iN;
 	}
 
-	public void SetID(int iID)
+	public void SetScientist(Scientist hScientist)
 	{
-		this.characterID = iID;
+		this.character = CharacterCollector.Instance.GetCharacter(hScientist);
 	}
 
 	public void SetHealth(int iHealth)

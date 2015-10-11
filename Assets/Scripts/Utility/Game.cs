@@ -14,8 +14,8 @@ public class Game : MonoBehaviour
 	public ArenaType nextArenaType;
 	public GameType gameType;
 
-	public Character character1 = new Character(100, "Einstein", 0, 1);
-	public Character character2 = new Character(100, "Galilei", 1, 0);
+	public Player player1;
+	public Player player2;
 
 	void Awake()
 	{
@@ -27,6 +27,12 @@ public class Game : MonoBehaviour
 		DontDestroyOnLoad(this.gameObject);
 	}
 
+	void Start()
+	{
+		this.player1 = new Player(100, Scientist.Einstein, 0);
+		this.player2 = new Player(100, Scientist.Galilei, 1);
+	}
+
 	public void BackOnMenu()
 	{
 		Application.LoadLevel("MainMenu");
@@ -36,8 +42,8 @@ public class Game : MonoBehaviour
 	{
 		this.gameType = GameType.Arcade;
 
-		this.character1.numberController = 1;
-		this.character2.numberController = 0;
+		this.player1.numberController = 1;
+		this.player2.numberController = 0;
 
 		Application.LoadLevel("PlayerSelect");
 	}
@@ -46,8 +52,8 @@ public class Game : MonoBehaviour
 	{
 		this.gameType = GameType.Multiplayer;
 
-		this.character1.numberController = 1;
-		this.character2.numberController = 2;
+		this.player1.numberController = 1;
+		this.player2.numberController = 2;
 
 		Application.LoadLevel("PlayerSelect");
 	}

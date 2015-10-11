@@ -19,29 +19,22 @@ public enum ArenaStatus
 
 public class Arena : MonoBehaviour
 {
-	public ArenaType type;
 	public ArenaStatus status;
 
 	public int startingTime;
 	public int currentTime;
 	public Text timer;
 
-	public List<GameObject> arenaPrefabs;
-	public List<GameObject> characterPrefabs;
+	private ArenaInitializer initializer;
 
-	public HealthBarController healthBar1;
-	public HealthBarController healthBar2;
-
-	public TurboBarController turboBar1;
-	public TurboBarController turboBar2;
-
-	private Transform spawn1;
-	private Transform spawn2;
-
-	private PlayerMovement player1;
-	private PlayerMovement player2;
+	private List<PlayerMovement> players;
 
 	#region Init
+
+	void Awake()
+	{
+		this.initializer = this.GetComponent<ArenaInitializer>();
+	}
 
 	void Start()
 	{
@@ -55,58 +48,17 @@ public class Arena : MonoBehaviour
 		StartCoroutine(this.Countdown(this.startingTime));
 	}
 
-	public void SetUpArena(ArenaType hType)
+	public void SetUpArena(ArenaType hArenaType)
 	{
-		this.type = hType;
-
-		switch(this.type)
-		{
-		case ArenaType.Laboratory:
-			GameObject newArena = Instantiate(this.arenaPrefabs[0], Vector3.zero, Quaternion.identity) as GameObject;
-			newArena.transform.SetParent(this.transform);
-			break;
-		}
-
-		this.spawn1 = GameObject.Find("Spawn1").transform;
-		this.spawn2 = GameObject.Find("Spawn2").transform;
-
-		GameObject char1 = Instantiate(this.characterPrefabs[Game.Instance.character1.characterID], this.spawn1.position, Quaternion.identity) as GameObject;
-		GameObject char2 = Instantiate(this.characterPrefabs[Game.Instance.character2.characterID], this.spawn2.position, Quaternion.identity) as GameObject;
-
-		char1.name = "Player1";
-		char2.name = "Player2";
-
-		this.player1 = char1.GetComponent<PlayerMovement>();
-		this.player2 = char2.GetComponent<PlayerMovement>();
-
-		// Set ID for character input and AI
-		this.player1.playerID = Game.Instance.character1.numberController;
-		this.player2.playerID = Game.Instance.character2.numberController;
-
-		// Set Health
-		this.player1.maxHealth = Game.Instance.character1.health;
-		this.player2.maxHealth = Game.Instance.character2.health;
-		this.player1.health = this.player1.maxHealth;
-		this.player2.health = this.player2.maxHealth;
-
-		// Let control if he needs AIEnemy or is controlled by human
-		this.player1.AmICpu();
-		this.player2.AmICpu();
-
-		// Set the correct charachter's healthbar
-		this.healthBar1.character = this.player1;
-		this.healthBar2.character = this.player2;
-
-		// Set the correct charachter's turbobar
-		this.turboBar1.character = this.player1;
-		this.turboBar2.character = this.player2;
+		this.initializer.InstantiateArenaPrefab(hArenaType);
+		this.players = this.initializer.InstantiateCharacters();
 	}
 
 	#endregion
 
 	void Update()
 	{
-		if(this.player1.health <= 0 || this.player2.health <= 0)
+		if(this.players[0].health <= 0 || this.players[1].health <= 0)
 		{
 			this.status = ArenaStatus.Stop;
 		}
@@ -118,7 +70,7 @@ public class Arena : MonoBehaviour
 
 		this.status = ArenaStatus.Fight;
 
-		while(this.currentTime > 0 && this.status == ArenaStatus.Fight)
+		while(this.status == ArenaStatus.Fight)
 		{
 			this.currentTime--;
 			this.timer.text = this.currentTime.ToString();

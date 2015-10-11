@@ -1,10 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 public class HealthBarController : MonoBehaviour
 {
-	public PlayerMovement character;
+	public PlayerMovement player;
 
 	private Slider slider;
 
@@ -15,7 +15,7 @@ public class HealthBarController : MonoBehaviour
 
 	void LateUpdate()
 	{
-		float nextValue = (float)this.character.health / (float)this.character.maxHealth;
+		float nextValue = (float)this.player.health / (float)this.player.maxHealth;
 		this.slider.value = Mathf.Lerp (this.slider.value, nextValue, 0.1f);
 	}
 }

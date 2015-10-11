@@ -4,7 +4,7 @@ using System.Collections;
 
 public class TurboBarController : MonoBehaviour
 {
-	public PlayerMovement character;
+	public PlayerMovement player;
 	public Image turboSprite;
 	
 	private Slider slider;
@@ -17,9 +17,9 @@ public class TurboBarController : MonoBehaviour
 	
 	void LateUpdate()
 	{
-		float nextValue = (float)this.character.turbo.CurrentTurbo / (float)this.character.turbo.TurboLimit;
+		float nextValue = (float)this.player.turbo.CurrentTurbo / (float)this.player.turbo.TurboLimit;
 		this.slider.value = Mathf.Lerp (this.slider.value, nextValue, 0.1f);
 
-		this.turboSprite.enabled = this.character.turbo.IsInTurbo();
+		this.turboSprite.enabled = this.player.turbo.IsInTurbo();
 	}
 }
