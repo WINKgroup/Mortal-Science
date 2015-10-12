@@ -45,6 +45,8 @@ public class ArenaInitializer : MonoBehaviour
 		
 		GameObject char1 = Instantiate(Game.Instance.player1.character.prefab, this.spawn1.position, Quaternion.identity) as GameObject;
 		GameObject char2 = Instantiate(Game.Instance.player2.character.prefab, this.spawn2.position, Quaternion.identity) as GameObject;
+
+		char2.transform.localScale = new Vector3(-char2.transform.localScale.x, char2.transform.localScale.y, char2.transform.localScale.z);
 		
 		char1.name = "Player1";
 		char2.name = "Player2";

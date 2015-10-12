@@ -46,38 +46,32 @@ public class HitBox : MonoBehaviour
 			if(target.GetHit(this.power))
 			{
 				this.playerMovement.turbo.AddTurbo(this.power * 2);
-				target.turbo.AddTurbo(this.power / 3);
 				MakeParticle();
 			}
 			else
 			{
 				this.playerMovement.turbo.AddTurbo(this.power / 2);
-				target.turbo.AddTurbo(this.power);
 			}
 			break;
 		case 1:
 			if(target.GetHit(this.power))
 			{
 				this.playerMovement.turbo.AddTurbo(this.power * 2);
-				target.turbo.AddTurbo(this.power / 3);
 				MakeParticle();
 			}
 			else
 			{
 				this.playerMovement.turbo.AddTurbo(this.power / 2);
-				target.turbo.AddTurbo(this.power);
 			}
 			break;
 		case 2:
 			if(target.GetHit(this.power))
 			{
 				this.playerMovement.turbo.AddTurbo(this.power * 3);
-				target.turbo.AddTurbo(this.power / 3);
 				MakeParticle();
 			}
 			else
 			{
-				this.playerMovement.turbo.AddTurbo(this.power / 2);
 				target.turbo.AddTurbo(this.power);
 			}
 			break;

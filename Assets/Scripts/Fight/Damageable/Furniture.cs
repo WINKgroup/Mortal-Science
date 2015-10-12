@@ -3,8 +3,10 @@ using System.Collections;
 
 public class Furniture : Damageable
 {
-	public int life = 100;
+	public int life = 20;
 	public bool breakable = true;
+	public string onomatopoeia = "KABOOM";
+	public int onomatopoeiaDimension = 60;
 
 	void Awake()
 	{
@@ -20,9 +22,16 @@ public class Furniture : Damageable
 			
 			if(this.life <= 0)
 			{
+				this.CreateOnomatopoeia();
 				base.DestroyAnimation();
 			}
 		}
+	}
+
+	private void CreateOnomatopoeia()
+	{
+		Onomatopoeia onom = OnomatopoeiaManager.Instance.GetOnomatopoeia().GetComponent<Onomatopoeia>();
+		onom.Initialize(this.transform.position, this.onomatopoeia, this.onomatopoeiaDimension, 1f);
 	}
 }
 

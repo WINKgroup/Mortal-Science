@@ -15,6 +15,7 @@ public class AIEnemy : MonoBehaviour
 	public float actionTime = 2f;
 	public float comboRate = 0.05f;
 	public float attackProbability = 0.5f;
+	public float guardProbability = 0.5f;
 	public float actionID;
 
 	public float currentTime;

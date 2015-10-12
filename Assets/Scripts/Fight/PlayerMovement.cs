@@ -81,11 +81,11 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if(this.arena.status == ArenaStatus.Fight)
 		{
+			// Am I in guard?
+			this.Guard();
+
 			if(this.playerID != 0)
 			{
-				// Am I in guard?
-				this.Guard();
-
 				// If I am not in guard I can handle other inputs
 				if(!this.inputGuard)
 				{
@@ -160,7 +160,10 @@ public class PlayerMovement : MonoBehaviour
 
 	void Guard()
 	{
-		this.inputGuard = Input.GetButton("Fire2_player" + this.playerID);
+		if(this.aiEnemy == null)
+		{
+			this.inputGuard = Input.GetButton("Fire2_player" + this.playerID);
+		}
 
 		if(this.inputGuard && this.turbo.CurrentTurbo > 10 * Time.deltaTime)
 		{
@@ -216,15 +219,27 @@ public class PlayerMovement : MonoBehaviour
 
 	public bool GetHit(int damage)
 	{
+		if(this.aiEnemy != null)
+		{
+			this.inputGuard = (Random.value > this.aiEnemy.guardProbability) ? false : true;
+			this.Guard();
+		}
+
 		if(this.inputGuard)
+		{
+			this.turbo.AddTurbo(damage / 3);
+			StartCoroutine(this.ExitGuard(0.2f));
 			return false;
+		}
 
 		if(this.health > 0)
 		{
 			this.camShake.Shake();
 
 			this.health -= damage;
-			
+
+			this.turbo.AddTurbo(damage / 4);
+
 			if(this.health > 0)
 			{
 				this.animator.SetTrigger("Hit");
@@ -245,5 +260,17 @@ public class PlayerMovement : MonoBehaviour
 		{
 			DestroyImmediate(this.aiEnemy);
 		}
+	}
+
+	IEnumerator ExitGuard(float fTime)
+	{
+		while(fTime > 0)
+		{
+			fTime -= Time.deltaTime;
+
+			yield return new WaitForEndOfFrame();
+		}
+
+		this.inputGuard = false;
 	}
 }
