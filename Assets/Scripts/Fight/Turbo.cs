@@ -1,6 +1,6 @@
 public class Turbo
 {
-	public int CurrentTurbo {get; private set;}
+	public float CurrentTurbo {get; private set;}
 	public int TurboLimit {get; private set;}
 
 	public Turbo (int iTurboLimit)
@@ -9,9 +9,9 @@ public class Turbo
 		this.CurrentTurbo = 0;
 	}
 
-	public int AddTurbo(int iTurbo)
+	public float AddTurbo(float fTurbo)
 	{
-		this.CurrentTurbo = (this.CurrentTurbo + iTurbo > TurboLimit) ? this.TurboLimit : this.CurrentTurbo + iTurbo;
+		this.CurrentTurbo = (this.CurrentTurbo + fTurbo > TurboLimit) ? this.TurboLimit : this.CurrentTurbo + fTurbo;
 		return this.CurrentTurbo;
 	}
 

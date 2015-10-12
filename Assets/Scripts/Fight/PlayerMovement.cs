@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 			if(this.playerID != 0)
 			{
 				// Am I in guard?
-				this.inputGuard = Input.GetButton("Fire2_player" + this.playerID);
+				this.Guard();
 
 				// If I am not in guard I can handle other inputs
 				if(!this.inputGuard)
@@ -155,6 +155,20 @@ public class PlayerMovement : MonoBehaviour
 				this.rb.AddForce(this.movementDirection * this.speedDiagonalModifier);
 			else
 				this.rb.AddForce(this.movementDirection);
+		}
+	}
+
+	void Guard()
+	{
+		this.inputGuard = Input.GetButton("Fire2_player" + this.playerID);
+
+		if(this.inputGuard && this.turbo.CurrentTurbo > 10 * Time.deltaTime)
+		{
+			this.turbo.AddTurbo(-10 * Time.deltaTime);
+		}
+		else
+		{
+			this.inputGuard = false;
 		}
 	}
 

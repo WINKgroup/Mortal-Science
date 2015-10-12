@@ -36,6 +36,7 @@ public class Arena : MonoBehaviour
 	void Awake()
 	{
 		this.initializer = this.GetComponent<ArenaInitializer>();
+		this.readyFightUI.SetActive(false);
 		this.status = ArenaStatus.Ready;
 	}
 
@@ -56,6 +57,7 @@ public class Arena : MonoBehaviour
 		this.initializer.InstantiateArenaPrefab(hArenaType);
 		this.players = this.initializer.InstantiateCharacters();
 		Camera.main.GetComponent<CameraMovement>().TakePlayers();
+		this.readyFightUI.SetActive(true);
 	}
 
 	#endregion
