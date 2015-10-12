@@ -44,7 +44,6 @@ public class Arena : MonoBehaviour
 		Game.Instance.arena = this;
 
 		this.SetUpArena(Game.Instance.nextArenaType);
-		Camera.main.GetComponent<CameraMovement>().TakeTarget();
 
 		this.status = ArenaStatus.Idle;
 
@@ -56,6 +55,7 @@ public class Arena : MonoBehaviour
 	{
 		this.initializer.InstantiateArenaPrefab(hArenaType);
 		this.players = this.initializer.InstantiateCharacters();
+		Camera.main.GetComponent<CameraMovement>().TakePlayers();
 	}
 
 	#endregion

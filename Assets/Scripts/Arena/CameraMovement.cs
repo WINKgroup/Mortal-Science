@@ -20,10 +20,12 @@ public class CameraMovement : MonoBehaviour
 	[Range(-1000, 1000)]
 	public float offsetZ = 2;
 	
-	public GameObject target;
+	public GameObject player1;
+	public GameObject player2;
 	
 	public bool bounds;
-	
+
+	private Vector3 target;
 	public Vector3 minCameraPos;
 	public Vector3 maxCameraPos;
 	
@@ -39,11 +41,14 @@ public class CameraMovement : MonoBehaviour
 	
 	void LateUpdate ()
 	{
-		if(this.target != null)
+
+		if(this.player1 != null && this.player2 != null)
 		{
-			posX = Mathf.SmoothDamp(transform.position.x, target.transform.position.x + offsetX, ref speed.x, smoothX);
-			posY = Mathf.SmoothDamp(transform.position.y, target.transform.position.y + offsetY, ref speed.y, smoothY);
-			posZ = Mathf.SmoothDamp(transform.position.z, target.transform.position.z + offsetZ, ref speed.z, smoothZ);
+			this.CalculateTarget();
+
+			posX = Mathf.SmoothDamp(transform.position.x, this.target.x + offsetX, ref speed.x, smoothX);
+			posY = Mathf.SmoothDamp(transform.position.y, this.target.y + offsetY, ref speed.y, smoothY);
+			posZ = Mathf.SmoothDamp(transform.position.z, this.target.z + offsetZ, ref speed.z, smoothZ);
 			
 			transform.position = new Vector3(posX, posY, posZ);
 
@@ -53,23 +58,37 @@ public class CameraMovement : MonoBehaviour
 		}
 	}
 
-	public void TakeTarget()
+	private void CalculateTarget()
+	{
+		this.target = new Vector3((this.player1.transform.position.x + this.player2.transform.position.x) / 2,
+								  (this.player1.transform.position.y + this.player2.transform.position.y) / 2,
+								  (this.player1.transform.position.z + this.player2.transform.position.z) / 2);
+	}
+
+	public void TakePlayers()
 	{
 		List<GameObject> players = new List<GameObject>();
 		players = GameObject.FindGameObjectsWithTag("Player").ToList();
 		foreach(GameObject pl in players)
 		{
 			PlayerMovement pm = pl.GetComponent<PlayerMovement>();
-			if(pm != null && pm.playerID == 1)
+			if 		(pm != null && pm.playerID == 1)
 			{
-				this.target = pl;
-				break;
+				this.player1 = pl;
+			}
+			else if (pm != null && (pm.playerID == 2 || pm.playerID == 0))
+			{
+				this.player2 = pl;
 			}
 		}
 		
-		if(this.target == null)
+		if(this.player1 == null)
 		{
 			Debug.LogError("There's no Player1 in the scene");
+		}
+		if(this.player2 == null)
+		{
+			Debug.LogError("There's no Player2 in the scene");
 		}
 	}
 }
