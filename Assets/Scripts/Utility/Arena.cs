@@ -29,15 +29,20 @@ public class Arena : MonoBehaviour
 
 	private List<PlayerMovement> players;
 
+	public GameObject readyFightUI;
+
 	#region Init
 
 	void Awake()
 	{
 		this.initializer = this.GetComponent<ArenaInitializer>();
+		this.status = ArenaStatus.Ready;
 	}
 
 	void Start()
 	{
+		Game.Instance.arena = this;
+
 		this.SetUpArena(Game.Instance.nextArenaType);
 		Camera.main.GetComponent<CameraMovement>().TakeTarget();
 
@@ -45,7 +50,6 @@ public class Arena : MonoBehaviour
 
 		this.startingTime = 60;
 		this.timer.text = this.startingTime.ToString();
-		StartCoroutine(this.Countdown(this.startingTime));
 	}
 
 	public void SetUpArena(ArenaType hArenaType)
@@ -64,11 +68,15 @@ public class Arena : MonoBehaviour
 		}
 	}
 
+	public void StartMatch()
+	{
+		this.status = ArenaStatus.Fight;
+		StartCoroutine(this.Countdown(this.startingTime));
+	}
+
 	private IEnumerator Countdown(int time)
 	{
 		this.currentTime = time;
-
-		this.status = ArenaStatus.Fight;
 
 		while(this.status == ArenaStatus.Fight)
 		{

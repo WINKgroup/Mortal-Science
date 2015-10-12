@@ -322,9 +322,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiState: 0
   distance: 0
-  closeDistance: 1.39999998
+  closeDistance: 1.20000005
   inertia: .800000012
-  actionTime: 1.39999998
+  actionTime: 1.10000002
   comboRate: .0500000007
   attackProbability: .699999988
   actionID: 0
