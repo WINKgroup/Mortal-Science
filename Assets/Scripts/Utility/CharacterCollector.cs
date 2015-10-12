@@ -43,6 +43,7 @@ public class Character
 	public Scientist scientist;
 	public string name;
 	public string turboName;
+	public List<string> sentences;
 	public Sprite face;
 	public GameObject prefab;
 }

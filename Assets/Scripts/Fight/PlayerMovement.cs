@@ -39,11 +39,13 @@ public class PlayerMovement : MonoBehaviour
 	private Animator animator;
 	private AIEnemy aiEnemy;
 	private CameraShake camShake;
+	private Mouth mouth;
 
 	void Awake()
 	{
 		this.rb 		= this.GetComponent<Rigidbody>();
 		this.feet 		= this.GetComponentInChildren<GravityObject>();
+		this.mouth 		= this.GetComponentInChildren<Mouth>();
 		this.animator 	= this.GetComponentInChildren<Animator>();
 		this.aiEnemy 	= this.GetComponent<AIEnemy>();
 		this.camShake 	= Camera.main.GetComponent<CameraShake>();
@@ -260,6 +262,11 @@ public class PlayerMovement : MonoBehaviour
 		{
 			DestroyImmediate(this.aiEnemy);
 		}
+	}
+
+	public void Speak()
+	{
+		this.mouth.SpeakRandomSentence();
 	}
 
 	IEnumerator ExitGuard(float fTime)

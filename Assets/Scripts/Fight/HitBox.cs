@@ -26,6 +26,7 @@ public class HitBox : MonoBehaviour
 		if(pm != null)
 		{
 			HitACharacter(pm);
+			this.Speak();
 		}
 	}
 
@@ -37,6 +38,14 @@ public class HitBox : MonoBehaviour
 		                                     new Vector3(this.transform.position.x + randomPos.x, this.transform.position.y + randomPos.y, this.transform.position.z - 1),
 		                                     Quaternion.identity) as GameObject;
     }
+
+	void Speak()
+	{
+		if(Random.value > 0.8f)
+		{
+			this.playerMovement.Speak();
+		}
+	}
 
 	void HitACharacter(PlayerMovement target)
 	{

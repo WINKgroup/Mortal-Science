@@ -478,6 +478,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 168230924}
+--- !u!1001 &219753948
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 467824, guid: 4af836cfb9daf464e9ee6f60cdc5fa29, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 471.450165
+      objectReference: {fileID: 0}
+    - target: {fileID: 467824, guid: 4af836cfb9daf464e9ee6f60cdc5fa29, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 203.975204
+      objectReference: {fileID: 0}
+    - target: {fileID: 467824, guid: 4af836cfb9daf464e9ee6f60cdc5fa29, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.67541504
+      objectReference: {fileID: 0}
+    - target: {fileID: 467824, guid: 4af836cfb9daf464e9ee6f60cdc5fa29, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467824, guid: 4af836cfb9daf464e9ee6f60cdc5fa29, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467824, guid: 4af836cfb9daf464e9ee6f60cdc5fa29, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467824, guid: 4af836cfb9daf464e9ee6f60cdc5fa29, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467824, guid: 4af836cfb9daf464e9ee6f60cdc5fa29, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4af836cfb9daf464e9ee6f60cdc5fa29, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &255889651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1107,7 @@ Transform:
   m_Children:
   - {fileID: 1571579032}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!114 &464938175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,66 +1131,6 @@ MonoBehaviour:
   turbonamePlayer2: {fileID: 1863998261}
   imagePlayer1: {fileID: 667574988}
   imagePlayer2: {fileID: 1066888731}
---- !u!1 &505908567
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 505908569}
-  - 114: {fileID: 505908568}
-  m_Layer: 0
-  m_Name: Game
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &505908568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 505908567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff64aa5697893b4091e13e680c32077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arena: {fileID: 0}
-  nextArenaType: 0
-  gameType: 0
-  player1:
-    health: 100
-    numberController: 1
-    character:
-      scientist: 0
-      name: Einstein
-      turboName: Pugno Quantico
-      face: {fileID: 21300000, guid: c13155ee1f3d1e3479a53f6f620617e3, type: 3}
-      prefab: {fileID: 188784, guid: 81a3a68a84c0ef54ca29a47b3bf32079, type: 2}
-  player2:
-    health: 100
-    numberController: 0
-    character:
-      scientist: 1
-      name: Galilei
-      turboName: Menata Astronomica
-      face: {fileID: 21300000, guid: 7b4a8d56214a9b645a77604b9ad09175, type: 3}
-      prefab: {fileID: 188784, guid: cce008fb54cef2645806050935078164, type: 2}
---- !u!4 &505908569
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 505908567}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 471.450165, y: 203.975204, z: 2.67541504}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
 --- !u!1 &539094623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,56 +1623,6 @@ RectTransform:
   m_AnchoredPosition: {x: .0249848366, y: 0}
   m_SizeDelta: {x: -.0500180013, y: 0}
   m_Pivot: {x: .5, y: .5}
---- !u!1 &1363669518
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1363669520}
-  - 114: {fileID: 1363669519}
-  m_Layer: 0
-  m_Name: CharacterCollector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1363669519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1363669518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1088aed33855fca4eb4d03928a368128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characters:
-  - scientist: 0
-    name: Einstein
-    turboName: Pugno Quantico
-    face: {fileID: 21300000, guid: c13155ee1f3d1e3479a53f6f620617e3, type: 3}
-    prefab: {fileID: 188784, guid: 81a3a68a84c0ef54ca29a47b3bf32079, type: 2}
-  - scientist: 1
-    name: Galilei
-    turboName: Schiaffo Stellare
-    face: {fileID: 21300000, guid: 7b4a8d56214a9b645a77604b9ad09175, type: 3}
-    prefab: {fileID: 188784, guid: cce008fb54cef2645806050935078164, type: 2}
---- !u!4 &1363669520
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1363669518}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 191.495041, y: 577.787903, z: 87.1338348}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
 --- !u!1 &1434857691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,6 +1719,88 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -.25}
   m_SizeDelta: {x: 0, y: .5}
   m_Pivot: {x: .5, y: .5}
+--- !u!1001 &1447979310
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 421426, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 191.495041
+      objectReference: {fileID: 0}
+    - target: {fileID: 421426, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 577.787903
+      objectReference: {fileID: 0}
+    - target: {fileID: 421426, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 87.1338348
+      objectReference: {fileID: 0}
+    - target: {fileID: 421426, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421426, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421426, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421426, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 421426, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1466407987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1466407989}
+  - 114: {fileID: 1466407988}
+  m_Layer: 0
+  m_Name: BalloonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1466407988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466407987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ca5b036db0cc7458d201aa56277e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balloonPrefab: {fileID: 199690, guid: 22d09a826440af94a9fd2a92af99ca09, type: 2}
+--- !u!4 &1466407989
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466407987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 712.256226, y: 384.794403, z: -.400756836}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!4 &1571579032 stripped
 Transform:
   m_PrefabParentObject: {fileID: 413338, guid: 33ea7135cb669ff4eb3625374881f523, type: 2}
