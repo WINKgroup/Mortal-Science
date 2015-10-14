@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
 public class BalloonManager : MonoBehaviour
 {
 	public static BalloonManager Instance {get; private set;}
@@ -9,7 +10,7 @@ public class BalloonManager : MonoBehaviour
 	public GameObject balloonPrefab;
 	
 	private List<GameObject> balloons = new List<GameObject>();
-	
+	private Vector2 pivot_default;
 	
 	void Awake()
 	{
@@ -23,6 +24,8 @@ public class BalloonManager : MonoBehaviour
 	
 	void Start()
 	{
+		this.pivot_default = this.balloonPrefab.GetComponent<RectTransform>().pivot;
+
 		for(int i=0; i<4; i++)
 		{
 			GameObject newBalloon = Instantiate(this.balloonPrefab, new Vector2(0,0), Quaternion.identity) as GameObject;

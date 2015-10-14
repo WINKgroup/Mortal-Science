@@ -18,6 +18,12 @@ public enum ArenaStatus
 	Stop
 }
 
+public enum PlayerPosition
+{
+	Left,
+	Right
+}
+
 public class Arena : MonoBehaviour
 {
 	public ArenaStatus status;

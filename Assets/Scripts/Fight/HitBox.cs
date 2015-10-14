@@ -26,7 +26,7 @@ public class HitBox : MonoBehaviour
 		if(pm != null)
 		{
 			HitACharacter(pm);
-			this.Speak();
+			this.Speak(this.playerMovement.gameObject.transform.position, pm.gameObject.transform.position);
 		}
 	}
 
@@ -39,11 +39,18 @@ public class HitBox : MonoBehaviour
 		                                     Quaternion.identity) as GameObject;
     }
 
-	void Speak()
+	void Speak(Vector3 pos1, Vector3 pos2)
 	{
+		PlayerPosition pos;
+
 		if(Random.value > 0.8f)
 		{
-			this.playerMovement.Speak();
+			if(pos1.x > pos2.x)
+				pos = PlayerPosition.Right;
+			else
+				pos = PlayerPosition.Left;
+
+			this.playerMovement.Speak(pos);
 		}
 	}
 

@@ -264,9 +264,9 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	public void Speak()
+	public void Speak(PlayerPosition hPos)
 	{
-		this.mouth.SpeakRandomSentence();
+		this.mouth.SpeakRandomSentence(hPos);
 	}
 
 	IEnumerator ExitGuard(float fTime)
