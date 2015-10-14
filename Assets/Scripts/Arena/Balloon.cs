@@ -18,7 +18,7 @@ public class Balloon : MonoBehaviour
 	
 	public void SetText(string sText)
 	{
-		this.label.text = sText;
+		this.label.text = sText.ToUpper();
 	}
 	
 	public void Initialize(Vector3 vPosition, string sText, float fLifeTime)

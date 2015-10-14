@@ -22,6 +22,7 @@ public class AIEnemy : MonoBehaviour
 	public bool doAction;
 
 	public bool closeCombat;
+	public bool canJump;
 	public GameObject target;
 
 	private PlayerMovement playerMovement;
@@ -96,15 +97,9 @@ public class AIEnemy : MonoBehaviour
 		this.distance = Vector3.Distance(this.transform.position, this.target.transform.position);
 		this.closeCombat = this.distance < this.closeDistance;
 
+		this.canJump = (this.distance < this.closeDistance * 1.1f) ? false : true;
+
 		return this.closeCombat;
-		/*if(this.distance < this.closeDistance)
-		{
-			this.aiState = AIState.close;
-		}
-		else if(this.distance >= this.closeDistance)
-		{	
-			this.aiState = AIState.far;
-		}*/
 	}
 
 	void CheckForFlip()
@@ -149,7 +144,7 @@ public class AIEnemy : MonoBehaviour
 
 	void JumpInput()
 	{
-		if(!this.closeCombat)
+		if(this.canJump)
 			this.playerMovement.inputJump = (Random.value > 0.6f) ? 1 : 0;
 	}
 	
