@@ -658,7 +658,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: idle
-  m_Speed: .200000003
+  m_Speed: .0799999982
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110141550}
