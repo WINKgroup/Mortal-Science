@@ -13,6 +13,7 @@ public enum ArenaStatus
 	Idle,
 	Ready,
 	Fight,
+	Turbo,
 	TimeUp,
 	Stop
 }
@@ -80,7 +81,7 @@ public class Arena : MonoBehaviour
 	{
 		this.currentTime = time;
 
-		while(this.status == ArenaStatus.Fight)
+		while(this.status == ArenaStatus.Fight || this.status == ArenaStatus.Turbo)
 		{
 			this.currentTime--;
 			this.timer.text = this.currentTime.ToString();

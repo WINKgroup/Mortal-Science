@@ -249,7 +249,7 @@ public class PlayerMovement : MonoBehaviour
 			else
 			{
 				this.health = 0;
-				this.animator.SetTrigger("Hit");
+				this.animator.SetTrigger("KO");
 			}
 		}
 
