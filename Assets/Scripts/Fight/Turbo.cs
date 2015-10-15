@@ -1,3 +1,4 @@
+[System.Serializable]
 public class Turbo
 {
 	public float CurrentTurbo {get; private set;}

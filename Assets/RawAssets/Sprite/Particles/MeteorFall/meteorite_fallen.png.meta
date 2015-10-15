@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: 130881a17d1516e46b7f04991877e3bc
+timeCreated: 1444950530
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: meteorite_fallen_0
+    21300002: meteorite_fallen_1
+    21300004: meteorite_fallen_2
+    21300006: meteorite_fallen_3
+    21300008: meteorite_fallen_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: meteorite_fallen_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 51
+        height: 128
+      alignment: 9
+      pivot: {x: .421390504, y: .180526227}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meteorite_fallen_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 85
+        height: 128
+      alignment: 9
+      pivot: {x: .38208583, y: .127280593}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meteorite_fallen_2
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 0
+        width: 87
+        height: 128
+      alignment: 9
+      pivot: {x: .361755729, y: .142941073}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meteorite_fallen_3
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 0
+        width: 107
+        height: 128
+      alignment: 9
+      pivot: {x: .425063938, y: .0865633339}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meteorite_fallen_4
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 0
+        width: 100
+        height: 128
+      alignment: 9
+      pivot: {x: .435855091, y: -.0136637446}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

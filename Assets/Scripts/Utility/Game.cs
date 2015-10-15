@@ -31,8 +31,8 @@ public class Game : MonoBehaviour
 	{
 		if(this.gameType != GameType.Menu)
 		{
-			this.player1 = new Player(100, Scientist.Einstein, 1);
-			this.player2 = new Player(100, Scientist.Galilei, 0);
+			this.player1 = new Player(100, Scientist.Einstein, 0);
+			this.player2 = new Player(100, Scientist.Galilei, 1);
 		}
 	}
 

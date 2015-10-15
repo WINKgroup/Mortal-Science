@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b401e52aaef07a4bbfbd272a1946f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 111094, guid: df9f03104cd0d934dad947a5a2151f59, type: 2}
+  bombPrefab: {fileID: 123768, guid: df9f03104cd0d934dad947a5a2151f59, type: 2}
   numberOfBombs: 7
 --- !u!114 &11478694
 MonoBehaviour:
