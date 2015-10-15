@@ -230,7 +230,7 @@ public class PlayerMovement : MonoBehaviour
 		if(this.inputGuard)
 		{
 			this.turbo.AddTurbo(damage / 3);
-			StartCoroutine(this.ExitGuard(0.2f));
+			StartCoroutine(this.aiEnemy.ExitGuard(0.2f));
 			return false;
 		}
 
@@ -267,17 +267,5 @@ public class PlayerMovement : MonoBehaviour
 	public void Speak(PlayerPosition hPos)
 	{
 		this.mouth.SpeakRandomSentence(hPos);
-	}
-
-	IEnumerator ExitGuard(float fTime)
-	{
-		while(fTime > 0)
-		{
-			fTime -= Time.deltaTime;
-
-			yield return new WaitForEndOfFrame();
-		}
-
-		this.inputGuard = false;
 	}
 }

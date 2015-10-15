@@ -167,4 +167,16 @@ public class AIEnemy : MonoBehaviour
 			Debug.LogError("There's no Player1 in the scene");
 		}
 	}
+
+	public IEnumerator ExitGuard(float fTime)
+	{
+		while(fTime > 0)
+		{
+			fTime -= Time.deltaTime;
+			
+			yield return null;
+		}
+		
+		this.playerMovement.inputGuard = false;
+	}
 }
