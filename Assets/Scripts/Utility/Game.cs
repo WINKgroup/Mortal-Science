@@ -3,7 +3,7 @@ using System.Collections;
 
 public enum GameType
 {
-	Arcade, Multiplayer
+	Menu, Arcade, Multiplayer
 }
 
 public class Game : MonoBehaviour
@@ -29,8 +29,11 @@ public class Game : MonoBehaviour
 
 	void Start()
 	{
-		this.player1 = new Player(100, Scientist.Einstein, 1);
-		this.player2 = new Player(100, Scientist.Galilei, 0);
+		if(this.gameType != GameType.Menu)
+		{
+			this.player1 = new Player(100, Scientist.Einstein, 1);
+			this.player2 = new Player(100, Scientist.Galilei, 2);
+		}
 	}
 
 	public void BackOnMenu()
@@ -42,20 +45,24 @@ public class Game : MonoBehaviour
 	{
 		this.gameType = GameType.Arcade;
 
-		this.player1.numberController = 1;
-		this.player2.numberController = 0;
+		this.player1 = new Player(100, Scientist.Einstein, 1);
+		this.player2 = new Player(100, Scientist.Galilei, 0);
 
-		Application.LoadLevel("PlayerSelect");
+		this.StartBattle();
+
+		//Application.LoadLevel("PlayerSelect");
 	}
 
 	public void OnMultiplayerClick()
 	{
 		this.gameType = GameType.Multiplayer;
 
-		this.player1.numberController = 1;
-		this.player2.numberController = 2;
+		this.player1 = new Player(100, Scientist.Einstein, 1);
+		this.player2 = new Player(100, Scientist.Galilei, 2);
 
-		Application.LoadLevel("PlayerSelect");
+		this.StartBattle();
+
+		//Application.LoadLevel("PlayerSelect");
 	}
 
 	public void StartBattle()
