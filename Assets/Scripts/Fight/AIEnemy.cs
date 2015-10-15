@@ -97,7 +97,7 @@ public class AIEnemy : MonoBehaviour
 		this.distance = Vector3.Distance(this.transform.position, this.target.transform.position);
 		this.closeCombat = this.distance < this.closeDistance;
 
-		this.canJump = (this.distance < this.closeDistance * 1.1f) ? false : true;
+		this.canJump = (this.distance < this.closeDistance * 1.5f) ? false : true;
 
 		return this.closeCombat;
 	}

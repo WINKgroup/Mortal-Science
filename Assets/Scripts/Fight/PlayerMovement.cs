@@ -91,10 +91,10 @@ public class PlayerMovement : MonoBehaviour
 				// If I am not in guard I can handle other inputs
 				if(!this.inputGuard)
 				{
-					this.inputHorizontal 	= Input.GetAxis("Horizontal_player" + this.playerID);
-					this.inputVertical 		= Input.GetAxis("Vertical_player" + this.playerID);
-					this.inputJump 			= Input.GetAxis("Jump_player" + this.playerID);
-					this.inputAttack		= Input.GetButtonDown("Fire3_player" + this.playerID);
+					this.inputHorizontal 	= Input.GetAxis("Horizontal_player" + this.playerID.ToString());
+					this.inputVertical 		= Input.GetAxis("Vertical_player" + this.playerID.ToString());
+					this.inputJump 			= Input.GetAxis("Jump_player" + this.playerID.ToString());
+					this.inputAttack		= Input.GetButtonDown("Fire3_player" + this.playerID.ToString());
 				}
 				else
 				{
@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if(this.aiEnemy == null)
 		{
-			this.inputGuard = Input.GetButton("Fire2_player" + this.playerID);
+			this.inputGuard = Input.GetButton("Fire2_player" + this.playerID.ToString());
 		}
 
 		if(this.inputGuard && this.turbo.CurrentTurbo > 10 * Time.deltaTime)
