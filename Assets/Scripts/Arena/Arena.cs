@@ -34,7 +34,8 @@ public class Arena : MonoBehaviour
 
 	private ArenaInitializer initializer;
 
-	private List<PlayerMovement> players;
+	private PlayerMovement player1;
+	private PlayerMovement player2;
 
 	public GameObject readyFightUI;
 
@@ -62,7 +63,10 @@ public class Arena : MonoBehaviour
 	public void SetUpArena(ArenaType hArenaType)
 	{
 		this.initializer.InstantiateArenaPrefab(hArenaType);
-		this.players = this.initializer.InstantiateCharacters();
+		this.initializer.InstantiateCharacters();
+		this.player1 = Game.Instance.player1.gameInstance.GetComponent<PlayerMovement>();
+		this.player2 = Game.Instance.player2.gameInstance.GetComponent<PlayerMovement>();
+
 		Camera.main.GetComponent<CameraMovement>().TakePlayers();
 		this.readyFightUI.SetActive(true);
 	}
@@ -71,7 +75,7 @@ public class Arena : MonoBehaviour
 
 	void Update()
 	{
-		if(this.players[0].health <= 0 || this.players[1].health <= 0)
+		if(this.player1.health <= 0 || this.player2.health <= 0)
 		{
 			this.status = ArenaStatus.Stop;
 		}

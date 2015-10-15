@@ -7,6 +7,7 @@ public class Player
 	public int health;
 	public int numberController;
 	public Character character;
+	public GameObject gameInstance;
 
 
 	public Player ()
