@@ -100,5 +100,8 @@ public class ArenaInitializer : MonoBehaviour
 		this.uiTurboAnim2.LoadFrames();
 		playersMovement1.uiTurboAnimation = this.uiTurboAnim1.transform.parent;
 		playersMovement2.uiTurboAnimation = this.uiTurboAnim2.transform.parent;
+
+		// Set the terrainCollider variable for detecting arena surface
+		Game.Instance.arena.groundSurface = this.GetComponentInChildren<TerrainCollider>();
 	}
 }

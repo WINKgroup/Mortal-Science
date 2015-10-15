@@ -41,6 +41,8 @@ public class Arena : MonoBehaviour
 	public GameObject readyFightUI;
 	public Text winText;
 
+	public TerrainCollider groundSurface;
+
 	#region Init
 
 	void Awake()
@@ -127,6 +129,20 @@ public class Arena : MonoBehaviour
 
 		this.winText.text += "\n<color=#c20f0f>vince!</color>";
 		this.winText.transform.parent.gameObject.SetActive(true);
-	}	
+	}
+
+	public Vector3 GetRandomPointOnSurface()
+	{
+		Vector3 origin = this.groundSurface.gameObject.transform.position;
+		Vector3 randomOnOrigin = new Vector3(Random.Range(0, this.groundSurface.bounds.size.x),
+		                                     0,
+		                                     Random.Range(0, this.groundSurface.bounds.size.z));
+
+		Vector3 randomPos = new Vector3(origin.x + randomOnOrigin.x,
+		                                origin.y,
+		                                origin.z + randomOnOrigin.z);
+
+		return randomPos;
+	}
 }
 

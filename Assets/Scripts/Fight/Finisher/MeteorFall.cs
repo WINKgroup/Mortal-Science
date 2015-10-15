@@ -1,18 +1,18 @@
 using UnityEngine;
 using System.Collections;
 
-public class NuclearExplosion : MonoBehaviour, IFinisher
+public class MeteorFall : MonoBehaviour, IFinisher
 {
 	public GameObject bombPrefab;
 	public int numberOfBombs = 7;
-
+	
 	private PlayerMovement playerMovement;
-
+	
 	void Awake()
 	{
 		this.playerMovement = this.GetComponent<PlayerMovement>();
 	}
-
+	
 	public void Execute()
 	{
 		for(int i=0; i<this.numberOfBombs; i++)

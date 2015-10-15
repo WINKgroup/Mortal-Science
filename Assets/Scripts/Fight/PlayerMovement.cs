@@ -258,6 +258,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			this.uiTurboAnimation.gameObject.SetActive(true);
 			this.turbo.ResetTurbo();
+			this.finisher.Execute();
 		}
 	}
 	#endregion

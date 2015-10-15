@@ -114,6 +114,7 @@ GameObject:
   - 136: {fileID: 13660080}
   - 114: {fileID: 11484840}
   - 114: {fileID: 11453382}
+  - 114: {fileID: 11468182}
   m_Layer: 0
   m_Name: Galilei
   m_TagString: Player
@@ -402,6 +403,19 @@ MonoBehaviour:
   - {fileID: 166132, guid: 2bed6931775eb6f43a32e7899e149dcf, type: 2}
   - {fileID: 177072, guid: 3d79a9c1bbffdd64cae0dbdcd301ceca, type: 2}
   - {fileID: 128952, guid: 56046a71f7266014d950a8015cc6e72c, type: 2}
+--- !u!114 &11468182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b401e52aaef07a4bbfbd272a1946f80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 111094, guid: df9f03104cd0d934dad947a5a2151f59, type: 2}
+  numberOfBombs: 7
 --- !u!114 &11478694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,6 +443,7 @@ MonoBehaviour:
   playerID: 0
   maxHealth: 0
   health: 0
+  uiTurboAnimation: {fileID: 0}
   speedX: 90
   speedZ: 80
   maxSpeedX: .5
@@ -441,6 +456,7 @@ MonoBehaviour:
   inputJump: 0
   inputAttack: 0
   inputGuard: 0
+  inputTurbo: 0
   attackIsRunning: 0
   combo: 0
   arena: {fileID: 0}

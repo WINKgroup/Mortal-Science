@@ -114,6 +114,7 @@ GameObject:
   - 136: {fileID: 13660080}
   - 114: {fileID: 11484840}
   - 114: {fileID: 11453382}
+  - 114: {fileID: 11424080}
   m_Layer: 0
   m_Name: Einstein
   m_TagString: Player
@@ -321,6 +322,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11424080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6adc9a05ede1aa4aa5be9f553f6afdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 111094, guid: 8df4a79ba86828c4c9ef3f57900a144c, type: 2}
+  numberOfBombs: 7
 --- !u!114 &11431088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -440,6 +454,7 @@ MonoBehaviour:
   playerID: 0
   maxHealth: 0
   health: 0
+  uiTurboAnimation: {fileID: 0}
   speedX: 90
   speedZ: 80
   maxSpeedX: .5
@@ -452,6 +467,7 @@ MonoBehaviour:
   inputJump: 0
   inputAttack: 0
   inputGuard: 0
+  inputTurbo: 0
   attackIsRunning: 0
   combo: 0
   arena: {fileID: 0}
