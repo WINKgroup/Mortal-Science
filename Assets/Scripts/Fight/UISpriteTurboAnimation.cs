@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,32 +8,43 @@ public class UISpriteTurboAnimation : MonoBehaviour
 	public int playerID;
 
 	private bool turbo;
-	private SpriteRenderer spriteRenderer;
+	private Image image;
 	private List<Sprite> frames = new List<Sprite>();
 
 	void Awake()
 	{
-		this.spriteRenderer = GetComponent<SpriteRenderer>();
+		this.image = GetComponent<Image>();
 		this.turbo = false;
+	}
+
+	void OnEnable()
+	{
+		StartCoroutine(this.AnimateTurbo());
 	}
 
 	void OnDisable()
 	{
 		this.turbo = false;
+
+		if(Game.Instance.arena.status == ArenaStatus.Turbo)
+		{
+			Game.Instance.arena.status = ArenaStatus.Fight;
+		}
 	}
 
 	public IEnumerator AnimateTurbo()
 	{
 		this.turbo = true;
+		Game.Instance.arena.status = ArenaStatus.Turbo;
 	
 		for(int i = 0; i < this.frames.Count && this.turbo; i++)
 		{
-			this.spriteRenderer.sprite = this.frames[i];
+			this.image.sprite = this.frames[i];
 
 			if(i == this.frames.Count - 1)
 				i = -1;
 
-			yield return null;
+			yield return new WaitForSeconds(0.1f);
 		}
 	}
 
