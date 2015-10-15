@@ -29,8 +29,8 @@ public class Game : MonoBehaviour
 
 	void Start()
 	{
-		//this.player1 = new Player(100, Scientist.Einstein, 0);
-		//this.player2 = new Player(100, Scientist.Galilei, 1);
+		this.player1 = new Player(100, Scientist.Einstein, 1);
+		this.player2 = new Player(100, Scientist.Galilei, 0);
 	}
 
 	public void BackOnMenu()

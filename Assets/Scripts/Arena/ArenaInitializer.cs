@@ -13,6 +13,9 @@ public class ArenaInitializer : MonoBehaviour
 	
 	public TurboBarController turboBar1;
 	public TurboBarController turboBar2;
+	
+	public UISpriteTurboAnimation uiTurboAnim1;
+	public UISpriteTurboAnimation uiTurboAnim2;
 
 	public Text namePlayer1;
 	public Text namePlayer2;
@@ -91,5 +94,11 @@ public class ArenaInitializer : MonoBehaviour
 		// Set the correct UI turbo name
 		this.turbonamePlayer1.text = Game.Instance.player1.character.turboName;
 		this.turbonamePlayer2.text = Game.Instance.player2.character.turboName;
+
+		// Set the correct UI turbo sprite animation
+		this.uiTurboAnim1.LoadFrames();
+		this.uiTurboAnim2.LoadFrames();
+		playersMovement1.uiTurboAnimation = this.uiTurboAnim1.transform.parent;
+		playersMovement2.uiTurboAnimation = this.uiTurboAnim2.transform.parent;
 	}
 }

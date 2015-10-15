@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 	public int health;
 
 	public Turbo turbo;
+	public Transform uiTurboAnimation;
 
 	public float speedX;
 	public float speedZ;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 	public float inputJump;
 	public bool inputAttack;
 	public bool inputGuard;
+	public bool inputTurbo;
 	public bool attackIsRunning;
 	public bool combo;
 
@@ -41,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
 	private CameraShake camShake;
 	private Mouth mouth;
 
+	#region - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Initializer
 	void Awake()
 	{
 		this.rb 		= this.GetComponent<Rigidbody>();
@@ -56,9 +59,19 @@ public class PlayerMovement : MonoBehaviour
 
 		this.turbo = new Turbo(100);
 
-		this.AmICpu();
+		//this.AmICpu();
 	}
 
+	public void AmICpu()
+	{
+		if(this.playerID != 0)
+		{
+			DestroyImmediate(this.aiEnemy);
+		}
+	}
+	#endregion
+
+	#region - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Update
 	void Update()
 	{
 		this.UpdateAnimator();
@@ -77,8 +90,20 @@ public class PlayerMovement : MonoBehaviour
 		this.FixMaxSpeed();
 
 		this.FixInertia();
+
+		this.Turbo();
 	}
 
+	void UpdateAnimator()
+	{
+		this.animator.SetBool("Grounded", this.feet.grounded);
+		
+		Vector3 vel = new Vector3(this.rb.velocity.x, 0, this.rb.velocity.z);
+		this.animator.SetFloat("Speed", vel.normalized.magnitude);
+	}
+	#endregion
+
+	#region - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Input
 	void GetInput()
 	{
 		if(this.arena.status == ArenaStatus.Fight)
@@ -95,13 +120,15 @@ public class PlayerMovement : MonoBehaviour
 					this.inputVertical 		= Input.GetAxis("Vertical_player" + this.playerID.ToString());
 					this.inputJump 			= Input.GetAxis("Jump_player" + this.playerID.ToString());
 					this.inputAttack		= Input.GetButtonDown("Fire3_player" + this.playerID.ToString());
+					this.inputTurbo 		= Input.GetButtonDown("Turbo_player" + this.playerID.ToString());
 				}
 				else
 				{
 					this.inputHorizontal 	= 0;
 					this.inputVertical 		= 0;
 					this.inputJump 			= 0;
-					this.inputAttack		= false;
+					this.inputTurbo 		= false;
+					//this.inputAttack		= false;
 				}
 			}
 		}
@@ -112,9 +139,12 @@ public class PlayerMovement : MonoBehaviour
 			this.inputJump 			= 0;
 			this.inputGuard			= false;
 			this.inputAttack		= false;
+			this.inputTurbo 		= false;
 		}
 	}
+	#endregion
 
+	#region - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Fix
 	void Flip()
 	{
 		if(this.inputHorizontal > 0)
@@ -139,6 +169,42 @@ public class PlayerMovement : MonoBehaviour
 		this.lookingRight = false;
 	}
 
+	void FixMaxSpeed()
+	{
+		if(this.rb.velocity.x > this.maxSpeedX)
+		{
+			this.rb.velocity = new Vector3(this.maxSpeedX, this.rb.velocity.y, this.rb.velocity.z);
+		}
+		else if(this.rb.velocity.x < -this.maxSpeedX)
+		{
+			this.rb.velocity = new Vector3(-this.maxSpeedX, this.rb.velocity.y, this.rb.velocity.z);
+		}
+		
+		if(this.rb.velocity.z > this.maxSpeedZ)
+		{
+			this.rb.velocity = new Vector3(this.rb.velocity.x, this.rb.velocity.y, this.maxSpeedZ);
+		}
+		else if(this.rb.velocity.z < -this.maxSpeedZ)
+		{
+			this.rb.velocity = new Vector3(this.rb.velocity.x, this.rb.velocity.y, -this.maxSpeedZ);
+			
+		}
+	}
+	
+	void FixInertia()
+	{
+		if(Mathf.Abs(this.inputHorizontal) < 0.1f)
+		{
+			this.rb.velocity = new Vector3(0, this.rb.velocity.y, this.rb.velocity.z);
+		}
+		if(Mathf.Abs(this.inputVertical) < 0.1f)
+		{
+			this.rb.velocity = new Vector3(this.rb.velocity.x, this.rb.velocity.y, 0);		
+		}
+	}
+	#endregion
+
+	#region - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - PlayerActions
 	void Jump()
 	{
 		if(this.feet.grounded && this.inputJump > 0)
@@ -170,55 +236,31 @@ public class PlayerMovement : MonoBehaviour
 		if(this.inputGuard && this.turbo.CurrentTurbo > 10 * Time.deltaTime)
 		{
 			this.turbo.AddTurbo(-10 * Time.deltaTime);
+			this.canAttack = false;
 		}
 		else
 		{
 			this.inputGuard = false;
+			this.canAttack = true;
 		}
 	}
-
-	void FixMaxSpeed()
+	
+	public void Speak(PlayerPosition hPos)
 	{
-		if(this.rb.velocity.x > this.maxSpeedX)
-		{
-			this.rb.velocity = new Vector3(this.maxSpeedX, this.rb.velocity.y, this.rb.velocity.z);
-		}
-		else if(this.rb.velocity.x < -this.maxSpeedX)
-		{
-			this.rb.velocity = new Vector3(-this.maxSpeedX, this.rb.velocity.y, this.rb.velocity.z);
-		}
-
-		if(this.rb.velocity.z > this.maxSpeedZ)
-		{
-			this.rb.velocity = new Vector3(this.rb.velocity.x, this.rb.velocity.y, this.maxSpeedZ);
-		}
-		else if(this.rb.velocity.z < -this.maxSpeedZ)
-		{
-			this.rb.velocity = new Vector3(this.rb.velocity.x, this.rb.velocity.y, -this.maxSpeedZ);
-			
-		}
+		this.mouth.SpeakRandomSentence(hPos);
 	}
 
-	void FixInertia()
+	public void Turbo()
 	{
-		if(Mathf.Abs(this.inputHorizontal) < 0.1f)
+		if(this.inputTurbo && this.turbo.IsInTurbo())
 		{
-			this.rb.velocity = new Vector3(0, this.rb.velocity.y, this.rb.velocity.z);
-		}
-		if(Mathf.Abs(this.inputVertical) < 0.1f)
-		{
-			this.rb.velocity = new Vector3(this.rb.velocity.x, this.rb.velocity.y, 0);		
+			this.uiTurboAnimation.gameObject.SetActive(true);
+			this.turbo.ResetTurbo();
 		}
 	}
+	#endregion
 
-	void UpdateAnimator()
-	{
-		this.animator.SetBool("Grounded", this.feet.grounded);
-
-		Vector3 vel = new Vector3(this.rb.velocity.x, 0, this.rb.velocity.z);
-		this.animator.SetFloat("Speed", vel.normalized.magnitude);
-	}
-
+	#region - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Events
 	public bool GetHit(int damage)
 	{
 		if(this.aiEnemy != null)
@@ -255,17 +297,5 @@ public class PlayerMovement : MonoBehaviour
 
 		return true;
 	}
-
-	public void AmICpu()
-	{
-		if(this.playerID != 0)
-		{
-			DestroyImmediate(this.aiEnemy);
-		}
-	}
-
-	public void Speak(PlayerPosition hPos)
-	{
-		this.mouth.SpeakRandomSentence(hPos);
-	}
+	#endregion
 }

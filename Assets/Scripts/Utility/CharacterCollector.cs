@@ -46,4 +46,5 @@ public class Character
 	public List<string> sentences;
 	public Sprite face;
 	public GameObject prefab;
+	public List<Sprite> uiTurboFrame;
 }
