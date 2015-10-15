@@ -15,7 +15,8 @@ public enum ArenaStatus
 	Fight,
 	Turbo,
 	TimeUp,
-	Stop
+	Stop,
+	End
 }
 
 public enum PlayerPosition
@@ -38,6 +39,7 @@ public class Arena : MonoBehaviour
 	private PlayerMovement player2;
 
 	public GameObject readyFightUI;
+	public Text winText;
 
 	#region Init
 
@@ -75,9 +77,15 @@ public class Arena : MonoBehaviour
 
 	void Update()
 	{
-		if(this.player1.health <= 0 || this.player2.health <= 0)
+		if((this.player1.health <= 0 || this.player2.health <= 0) && this.status != ArenaStatus.End)
 		{
 			this.status = ArenaStatus.Stop;
+		}
+
+		if(this.status == ArenaStatus.Stop)
+		{
+			this.EndMatch();
+			this.status = ArenaStatus.End;
 		}
 	}
 
@@ -105,5 +113,20 @@ public class Arena : MonoBehaviour
 			yield return new WaitForSeconds(1);
 		}
 	}
+
+	public void EndMatch()
+	{
+		if(this.player1.health > 0)
+		{
+			this.winText.text = Game.Instance.player1.character.name;
+		}
+		else
+		{
+			this.winText.text = Game.Instance.player2.character.name;
+		}
+
+		this.winText.text += "\n<color=#c20f0f>vince!</color>";
+		this.winText.transform.parent.gameObject.SetActive(true);
+	}	
 }
 

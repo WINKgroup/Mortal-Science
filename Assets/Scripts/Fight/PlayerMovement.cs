@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 	private AIEnemy aiEnemy;
 	private CameraShake camShake;
 	private Mouth mouth;
+	private IFinisher finisher;
 
 	#region - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Initializer
 	void Awake()
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 		this.mouth 		= this.GetComponentInChildren<Mouth>();
 		this.animator 	= this.GetComponentInChildren<Animator>();
 		this.aiEnemy 	= this.GetComponent<AIEnemy>();
+		this.finisher	= this.GetComponent<IFinisher>();
 		this.camShake 	= Camera.main.GetComponent<CameraShake>();
 
 		this.arena = GameObject.Find("Arena").GetComponent<Arena>();

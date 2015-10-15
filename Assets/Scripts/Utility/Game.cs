@@ -32,7 +32,7 @@ public class Game : MonoBehaviour
 		if(this.gameType != GameType.Menu)
 		{
 			this.player1 = new Player(100, Scientist.Einstein, 1);
-			this.player2 = new Player(100, Scientist.Galilei, 2);
+			this.player2 = new Player(100, Scientist.Galilei, 0);
 		}
 	}
 
@@ -68,6 +68,11 @@ public class Game : MonoBehaviour
 	public void StartBattle()
 	{
 		Application.LoadLevel("Battle");
+	}
+
+	public void GoToMainMenu()
+	{
+		Application.LoadLevel("MainMenu");
 	}
 	
 }
