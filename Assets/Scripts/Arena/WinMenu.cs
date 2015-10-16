@@ -5,6 +5,16 @@ public class WinMenu : MonoBehaviour
 {
 	public void ReloadLevel()
 	{
+		/*switch(Game.Instance.gameType)
+		{
+		case GameType.Arcade:
+			Game.Instance.OnArcadeClick();
+			break;
+		case GameType.Multiplayer:
+			Game.Instance.OnMultiplayerClick();
+			break;
+		}*/
+
 		Game.Instance.StartBattle();
 	}
 

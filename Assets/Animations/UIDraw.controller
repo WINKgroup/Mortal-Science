@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: UI_Win
+  m_Name: UIDraw
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -20,7 +20,7 @@ AnimatorController:
     m_DefaultWeight: 0
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_MultiThreadedStateMachine: 1
 --- !u!1102 &110258822
 AnimatorState:
@@ -28,7 +28,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: UIWin_Show
+  m_Name: UIDraw_Show
   m_Speed: 1.29999995
   m_CycleOffset: 0
   m_Transitions: []
@@ -37,7 +37,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: 55a444e6370f3464692f7a2c441e4074, type: 2}
+  m_Motion: {fileID: 7400000, guid: b22afae9978ed9f4785c81ada43b4799, type: 2}
   m_Tag: 
 --- !u!1107 &110719368
 AnimatorStateMachine:

@@ -40,6 +40,7 @@ public class Arena : MonoBehaviour
 
 	public GameObject readyFightUI;
 	public Text winText;
+	public Text drawText;
 
 	public TerrainCollider groundSurface;
 
@@ -89,6 +90,13 @@ public class Arena : MonoBehaviour
 			this.EndMatch();
 			this.status = ArenaStatus.End;
 		}
+
+		if(this.status == ArenaStatus.TimeUp)
+		{
+			//this.DrawMatch();
+			this.EndMatch();
+			this.status = ArenaStatus.End;
+		}
 	}
 
 	public void StartMatch()
@@ -118,17 +126,27 @@ public class Arena : MonoBehaviour
 
 	public void EndMatch()
 	{
-		if(this.player1.health > 0)
+		if(this.player1.health > this.player2.health)
 		{
 			this.winText.text = Game.Instance.player1.character.name;
 		}
-		else
+		else if(this.player1.health < this.player2.health)
 		{
 			this.winText.text = Game.Instance.player2.character.name;
+		}
+		else
+		{
+			this.DrawMatch();
+			return;
 		}
 
 		this.winText.text += "\n<color=#c20f0f>vince!</color>";
 		this.winText.transform.parent.gameObject.SetActive(true);
+	}
+
+	public void DrawMatch()
+	{
+		this.drawText.transform.parent.gameObject.SetActive(true);
 	}
 
 	public Vector3 GetRandomPointOnSurface()
