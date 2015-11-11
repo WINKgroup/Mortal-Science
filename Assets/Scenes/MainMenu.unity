@@ -187,6 +187,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11478002, guid: 4af836cfb9daf464e9ee6f60cdc5fa29, type: 2}
+      propertyPath: player2.numberController
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4af836cfb9daf464e9ee6f60cdc5fa29, type: 2}
   m_IsPrefabParent: 0
@@ -348,12 +352,11 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 321630566}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ee5657b24d83b043b9a4be35b08519b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingButton: {fileID: 946761949}
 --- !u!1 &433096441
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,8 +716,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1382515228}
-        m_MethodName: OnArcadeClick
+      - m_Target: {fileID: 321630571}
+        m_MethodName: StartArcade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1020,12 +1023,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1366152475}
---- !u!114 &1382515228 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11478002, guid: 4af836cfb9daf464e9ee6f60cdc5fa29,
-    type: 2}
-  m_PrefabInternal: {fileID: 155035693}
-  m_Script: {fileID: 11500000, guid: 0ff64aa5697893b4091e13e680c32077, type: 3}
 --- !u!1 &1456705138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,7 +1270,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pijatela con l'intelligenza artificale.
+  m_Text: Pijatela con l'intelligenza artificiale.
 --- !u!222 &1772706644
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1620,8 +1617,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1382515228}
-        m_MethodName: OnMultiplayerClick
+      - m_Target: {fileID: 321630571}
+        m_MethodName: StartMultiplayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

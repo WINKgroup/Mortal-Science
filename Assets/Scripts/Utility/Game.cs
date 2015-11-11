@@ -22,13 +22,12 @@ public class Game : MonoBehaviour
 		if(Instance == null)
 		{
 			Instance = this;
-			this.player1 = new Player(100, Scientist.Einstein, 1);
-			this.player2 = new Player(100, Scientist.Galilei, 2);
+			DontDestroyOnLoad(this.gameObject);
 		}
-		else if (Instance != this)
+		else
+		{
 			Destroy(this.gameObject);
-
-		DontDestroyOnLoad(this.gameObject);
+		}
 	}
 
 	public void BackOnMenu()
