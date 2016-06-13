@@ -97,7 +97,7 @@ public class HitBox : MonoBehaviour
 	void HitAnEnvironment(Damageable dmg)
 	{
 		dmg.Damage(this.playerMovement, this.power, GetComponent<Collider>().transform.position);
-		this.playerMovement.turbo.AddTurbo(Random.Range(4,12));
+		this.playerMovement.turbo.AddTurbo(Random.Range(3,9));
 	}
 }
 

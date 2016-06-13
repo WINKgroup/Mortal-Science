@@ -17,7 +17,7 @@ public class NuclearExplosion : MonoBehaviour, IFinisher
 	{
 		for(int i=0; i<this.numberOfBombs; i++)
 		{
-			Vector3 position = Game.Instance.arena.GetRandomPointOnSurfaceNear(playerMovement.transform.position, 8f);
+			Vector3 position = Game.Instance.arena.GetRandomPointOnSurfaceNear(playerMovement.transform.position, 9f);
 			GameObject newBomb = Instantiate(this.bombPrefab, position, Quaternion.identity)as GameObject;
 			newBomb.GetComponent<FinisherExplosion>().playerMovement = this.playerMovement;
 		}

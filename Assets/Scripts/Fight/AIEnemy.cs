@@ -66,6 +66,8 @@ public class AIEnemy : MonoBehaviour
 				this.DoAttackInput();
 			}
 		}
+
+		this.EvaluateTurbo();
 	}
 
 	void LateUpdate()
@@ -167,6 +169,14 @@ public class AIEnemy : MonoBehaviour
 		if(this.target == null)
 		{
 			Debug.LogError("There's no Player1 in the scene");
+		}
+	}
+
+	void EvaluateTurbo()
+	{
+		if(this.playerMovement.turbo.IsInTurbo())
+		{
+			this.playerMovement.inputTurbo = true;
 		}
 	}
 

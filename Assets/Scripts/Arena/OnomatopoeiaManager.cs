@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class OnomatopoeiaManager : MonoBehaviour
 {
 	public static OnomatopoeiaManager Instance {get; private set;}
-
+	
 	public GameObject onomatopoeiaPrefab;
 
 	private List<GameObject> onomatopoeias = new List<GameObject>();
@@ -26,6 +26,7 @@ public class OnomatopoeiaManager : MonoBehaviour
 		for(int i=0; i<5; i++)
 		{
 			GameObject newOnomatopoeia = Instantiate(this.onomatopoeiaPrefab, new Vector3(-1000,-1000,-1000), Quaternion.identity) as GameObject;
+			newOnomatopoeia.transform.SetParent(this.transform);
 			newOnomatopoeia.SetActive(false);
 			this.onomatopoeias.Add(newOnomatopoeia);
 		}
