@@ -102,6 +102,7 @@ public class Arena : MonoBehaviour
 	public void StartMatch()
 	{
 		this.status = ArenaStatus.Fight;
+		Game.Instance.ShowLoadingContent(false);
 		StartCoroutine(this.Countdown(this.startingTime));
 	}
 

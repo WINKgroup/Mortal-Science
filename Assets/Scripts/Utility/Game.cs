@@ -17,6 +17,8 @@ public class Game : MonoBehaviour
 	public Player player1;
 	public Player player2;
 
+	public GameObject loadingObject;
+
 	void Awake()
 	{
 		if(Instance == null)
@@ -24,11 +26,16 @@ public class Game : MonoBehaviour
 			Instance = this;
 			DontDestroyOnLoad(this.gameObject);
 			Cursor.visible = false;
+			#if UNITY_EDITOR
+			Cursor.visible = true;
+			#endif
 		}
 		else
 		{
 			Destroy(this.gameObject);
 		}
+
+		ShowLoadingContent(false);
 	}
 
 	public void BackOnMenu()
@@ -62,12 +69,23 @@ public class Game : MonoBehaviour
 
 	public void StartBattle()
 	{
+		ShowLoadingContent(true);
 		Application.LoadLevel("Battle");
 	}
 
 	public void GoToMainMenu()
 	{
+		ShowLoadingContent(true);
 		Application.LoadLevel("MainMenu");
+	}
+
+	public void ShowLoadingContent(bool show)
+	{
+		this.loadingObject = GameObject.Find("Loading");
+		if(this.loadingObject == null)
+			return;
+
+		this.loadingObject.SetActive(show);
 	}
 	
 }
