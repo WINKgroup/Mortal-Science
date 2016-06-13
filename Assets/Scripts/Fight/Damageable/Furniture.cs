@@ -13,10 +13,11 @@ public class Furniture : Damageable
 		base.OnAwake();
 	}
 
-	public override void Damage(int damage, Vector3 pos)
+	public override void Damage(PlayerMovement player, int damage, Vector3 pos)
 	{
 		if(this.breakable && this.life > 0)
 		{
+			this.lastPlayer = player;
 			this.life -= damage;
 			StartCoroutine(base.GetHit(pos));
 			

@@ -23,6 +23,7 @@ public class Game : MonoBehaviour
 		{
 			Instance = this;
 			DontDestroyOnLoad(this.gameObject);
+			Cursor.visible = false;
 		}
 		else
 		{

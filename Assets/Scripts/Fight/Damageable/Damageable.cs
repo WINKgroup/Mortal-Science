@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public abstract class Damageable : MonoBehaviour
 {
 	public Animator animator;
+	protected PlayerMovement lastPlayer;
 
 	protected void OnAwake()
 	{
@@ -13,7 +14,7 @@ public abstract class Damageable : MonoBehaviour
 			this.animator = this.GetComponentInChildren<Animator>();
 	}
 
-	public virtual void Damage(int damage, Vector3 pos)
+	public virtual void Damage(PlayerMovement player, int damage, Vector3 pos)
 	{
 	}
 
@@ -28,6 +29,8 @@ public abstract class Damageable : MonoBehaviour
 	{
 		Camera.main.GetComponent<CameraShake>().Shake();
 		this.animator.SetTrigger("Destroy");
+		if(lastPlayer != null)
+			this.lastPlayer.turbo.AddTurbo(20);
 	}
 
 	public void DestroyObj()

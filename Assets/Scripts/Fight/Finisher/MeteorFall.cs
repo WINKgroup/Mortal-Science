@@ -17,7 +17,8 @@ public class MeteorFall : MonoBehaviour, IFinisher
 	{
 		for(int i=0; i<this.numberOfBombs; i++)
 		{
-			GameObject newBomb = Instantiate(this.bombPrefab, Game.Instance.arena.GetRandomPointOnSurface(), Quaternion.identity)as GameObject;
+			Vector3 position = Game.Instance.arena.GetRandomPointOnSurfaceNear(playerMovement.transform.position, 8f);
+			GameObject newBomb = Instantiate(this.bombPrefab, position, Quaternion.identity)as GameObject;
 			newBomb.GetComponent<FinisherExplosion>().playerMovement = this.playerMovement;
 		}
 	}

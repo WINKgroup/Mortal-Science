@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
 	private CameraShake camShake;
 	private Mouth mouth;
 	private IFinisher finisher;
+	private TrailRenderer trail;
 
 	#region - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Initializer
 	void Awake()
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 		this.feet 		= this.GetComponentInChildren<GravityObject>();
 		this.mouth 		= this.GetComponentInChildren<Mouth>();
 		this.animator 	= this.GetComponentInChildren<Animator>();
+		this.trail		= this.GetComponentInChildren<TrailRenderer>();
 		this.aiEnemy 	= this.GetComponent<AIEnemy>();
 		this.finisher	= this.GetComponent<IFinisher>();
 		this.camShake 	= Camera.main.GetComponent<CameraShake>();
@@ -61,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
 		this.turbo = new Turbo(100);
 
-		//this.AmICpu();
+		this.trail.enabled = false;
 	}
 
 	public void AmICpu()
@@ -254,6 +256,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public void Turbo()
 	{
+		this.trail.enabled = this.turbo.IsInTurbo();
 		if(this.inputTurbo && this.turbo.IsInTurbo())
 		{
 			this.uiTurboAnimation.gameObject.SetActive(true);

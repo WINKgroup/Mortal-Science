@@ -149,18 +149,19 @@ public class Arena : MonoBehaviour
 		this.drawText.transform.parent.gameObject.SetActive(true);
 	}
 
-	public Vector3 GetRandomPointOnSurface()
+	public Vector3 GetRandomPointOnSurfaceNear(Vector3 originPosition, float range)
 	{
-		Vector3 origin = this.groundSurface.gameObject.transform.position;
-		Vector3 randomOnOrigin = new Vector3(Random.Range(0, this.groundSurface.bounds.size.x),
-		                                     0,
-		                                     Random.Range(0, this.groundSurface.bounds.size.z));
+		Vector3 randomPos = (Random.insideUnitSphere * range) + originPosition;
 
-		Vector3 randomPos = new Vector3(origin.x + randomOnOrigin.x,
-		                                origin.y,
-		                                origin.z + randomOnOrigin.z);
+		Vector3 terrain = this.groundSurface.transform.localPosition;
+		float depth = this.groundSurface.bounds.size.z;
+		float z = 0;
+		if(randomPos.z < terrain.z - depth/2)
+			z = terrain.z - depth/2;
+		if(randomPos.z > terrain.z + depth/2)
+			z = terrain.z + depth/2;
 
-		return randomPos;
+		return new Vector3(randomPos.x, 0f, z);
 	}
 }
 

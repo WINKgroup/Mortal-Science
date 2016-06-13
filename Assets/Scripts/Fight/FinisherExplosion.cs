@@ -29,6 +29,6 @@ public class FinisherExplosion : MonoBehaviour
 
 	void HitAnEnvironment(Damageable dmg)
 	{
-		dmg.Damage(this.power, GetComponent<Collider>().transform.position);
+		dmg.Damage(this.playerMovement, this.power, GetComponent<Collider>().transform.position);
 	}
 }
