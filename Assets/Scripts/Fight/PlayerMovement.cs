@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public float inputHorizontal;
 	public float inputVertical;
-	public float inputJump;
+	public bool inputJump;
 	public bool inputAttack;
 	public bool inputGuard;
 	public bool inputTurbo;
@@ -96,6 +96,8 @@ public class PlayerMovement : MonoBehaviour
 		this.FixInertia();
 
 		this.Turbo();
+
+
 	}
 
 	void UpdateAnimator()
@@ -122,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
 				{
 					this.inputHorizontal 	= Input.GetAxis("Horizontal_player" + this.playerID.ToString());
 					this.inputVertical 		= Input.GetAxis("Vertical_player" + this.playerID.ToString());
-					this.inputJump 			= Input.GetAxis("Jump_player" + this.playerID.ToString());
+					this.inputJump 			= Input.GetButtonDown("Jump_player" + this.playerID.ToString());
 					this.inputAttack		= Input.GetButtonDown("Fire3_player" + this.playerID.ToString());
 					this.inputTurbo 		= Input.GetButtonDown("Turbo_player" + this.playerID.ToString());
 				}
@@ -130,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
 				{
 					this.inputHorizontal 	= 0;
 					this.inputVertical 		= 0;
-					this.inputJump 			= 0;
+					this.inputJump 			= false;
 					this.inputTurbo 		= false;
 					//this.inputAttack		= false;
 				}
@@ -140,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			this.inputHorizontal 	= 0;
 			this.inputVertical 		= 0;
-			this.inputJump 			= 0;
+			this.inputJump 			= false;
 			this.inputGuard			= false;
 			this.inputAttack		= false;
 			this.inputTurbo 		= false;
@@ -211,7 +213,7 @@ public class PlayerMovement : MonoBehaviour
 	#region - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - PlayerActions
 	void Jump()
 	{
-		if(this.feet.grounded && this.inputJump > 0)
+		if(this.feet.grounded && this.inputJump)
 		{
 			this.rb.AddForce(Vector3.up * this.jumpPower);
 		}

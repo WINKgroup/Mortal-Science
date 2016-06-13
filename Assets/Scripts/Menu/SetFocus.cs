@@ -10,8 +10,19 @@ public class SetFocus : MonoBehaviour
 	
 	void OnEnable ()
 	{
-		Debug.Log ("Enabling");
-		this.eventSystem = EventSystem.current;
-		this.eventSystem.SetSelectedGameObject(this.objectFocused);
+		StartCoroutine(SelectContinueButtonLater());
+	}
+
+	IEnumerator SelectContinueButtonLater()
+	{
+		yield return null;
+		this.eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+		this.eventSystem.SetSelectedGameObject(null);
+		this.eventSystem.SetSelectedGameObject(this.objectFocused, null);
+		Button button = objectFocused.GetComponent<Button>();
+		if(button != null)
+		{
+			button.Select();
+		}
 	}
 }

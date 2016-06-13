@@ -140,14 +140,14 @@ public class AIEnemy : MonoBehaviour
 				this.playerMovement.inputVertical = 0f;
 			}
 
-			this.playerMovement.inputJump = 0;
+			this.playerMovement.inputJump = false;
 		}
 	}
 
 	void JumpInput()
 	{
 		if(this.canJump)
-			this.playerMovement.inputJump = (Random.value > 0.6f) ? 1 : 0;
+			this.playerMovement.inputJump = (Random.value > 0.6f) ? true : false;
 	}
 	
 	void TakeTarget()
