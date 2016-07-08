@@ -87,5 +87,10 @@ public class Game : MonoBehaviour
 
 		this.loadingObject.SetActive(show);
 	}
+
+	public void ExitGame()
+	{
+		Application.Quit();
+	}
 	
 }

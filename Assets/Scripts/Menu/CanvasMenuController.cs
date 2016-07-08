@@ -25,4 +25,9 @@ public class CanvasMenuController : MonoBehaviour
 	{
 		Game.Instance.OnMultiplayerClick();
 	}
+
+	public void CloseGame()
+	{
+		Game.Instance.ExitGame();
+	}
 }

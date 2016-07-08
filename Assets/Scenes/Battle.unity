@@ -3930,22 +3930,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1774809732}
     m_Modifications:
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[0].sentences.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[1].sentences.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[1].uiTurboFrame.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[0].uiTurboFrame.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 421426, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3977,54 +3961,6 @@ Prefab:
     - target: {fileID: 421426, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[1].uiTurboFrame.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 4784fb93225de4c4ca4f1f7aa805a10c,
-        type: 3}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[1].uiTurboFrame.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 62c16e5b1d1129348802632befdca4a3,
-        type: 3}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[1].uiTurboFrame.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: fb7475527224e6e4292f7ec67f34ffa3,
-        type: 3}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[1].uiTurboFrame.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5161b25173a720744a119d7ca05026a6,
-        type: 3}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[0].uiTurboFrame.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: e0e7730c34c06a748835da6b1caa63f7,
-        type: 3}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[0].uiTurboFrame.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: c405dd128ddfc0f46adac4909f6e8bdd,
-        type: 3}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[0].uiTurboFrame.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 745927d152e6a86448f69320b273671a,
-        type: 3}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[0].uiTurboFrame.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 6521ecb91f82dc4458d9933f301a85e0,
-        type: 3}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[0].sentences.Array.data[2]
-      value: Ancora te movi?!
-      objectReference: {fileID: 0}
-    - target: {fileID: 11438178, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
-      propertyPath: characters.Array.data[1].sentences.Array.data[2]
-      value: Pija sto grave!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 170d112a2fc3859498a88ceb70287bfa, type: 2}
