@@ -40,8 +40,8 @@ Now just go on your browser to `http://localhost:9080/index.html`
 
 `WASD` or the Arrow Keys to move in the space  
 `SPACE` to jump
-`F` to punch and kick
-`??` (when your Turbo is full)
+`F` or `ENTER` to punch and kick
+`T` (when your Turbo is full)
 
 #### 2P
 
